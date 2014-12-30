@@ -32,6 +32,7 @@
     <DefineConstants>TRACE;PCL</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\EdSnider.Plugins.Notifier.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Notifier.cs" />

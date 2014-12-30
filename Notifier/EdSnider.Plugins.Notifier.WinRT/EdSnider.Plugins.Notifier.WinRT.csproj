@@ -32,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\EdSnider.Plugins.Notifier.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <TargetPlatform Include="WindowsPhoneApp, Version=8.1" />

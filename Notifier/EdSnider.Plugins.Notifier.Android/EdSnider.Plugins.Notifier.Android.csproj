@@ -40,6 +40,7 @@
     <WarningLevel>4</WarningLevel>
     <AndroidUseSharedRuntime>False</AndroidUseSharedRuntime>
     <AndroidLinkMode>SdkOnly</AndroidLinkMode>
+    <DocumentationFile>bin\Release\EdSnider.Plugins.Notifier.XML</DocumentationFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Mono.Android" />

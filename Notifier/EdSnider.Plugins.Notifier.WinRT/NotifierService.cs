@@ -5,7 +5,7 @@ using EdSnider.Plugins.Core;
 namespace EdSnider.Plugins
 {
     /// <summary>
-    /// Notifier implementation for WinRT (Windows and Windows Phone 8.1)
+    /// Notifier implementation for Windows
     /// </summary>
     public class NotifierService : INotifierService
     {
