@@ -1,8 +1,10 @@
 ﻿using System;
 using EdSnider.Plugins.Core;
 #if __UNIFIED__
+using Foundation;
 using UIKit;
 #else
+using MonoTouch.Foundation;
 using MonoTouch.UIKit;
 #endif
 
@@ -22,7 +24,7 @@ namespace EdSnider.Plugins
         {
             var notification = new UILocalNotification
             {
-                FireDate = DateTime.Now,
+                FireDate = (NSDate)DateTime.Now,
                 AlertAction = title,
                 AlertBody = body
             };
