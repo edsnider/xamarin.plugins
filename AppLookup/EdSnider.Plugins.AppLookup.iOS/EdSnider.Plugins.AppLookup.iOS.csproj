@@ -3,12 +3,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProjectGuid>{35913677-C150-40A9-A3BC-27B1C8FE98AE}</ProjectGuid>
+    <ProjectGuid>{4F7913FE-0FC2-483D-A5E1-750377AEE4BB}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>iOSApp</RootNamespace>
+    <OutputType>Library</OutputType>
+    <RootNamespace>EdSnider.Plugins</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>iOSApp</AssemblyName>
+    <AssemblyName>EdSniderPluginsAppLookupiOS</AssemblyName>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
     <DebugSymbols>true</DebugSymbols>
@@ -19,21 +19,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
-    <MtouchArch>Default, ARMv7</MtouchArch>
+    <MtouchArch>i386</MtouchArch>
     <MtouchLink>None</MtouchLink>
-    <MtouchDebug>True</MtouchDebug>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
-    <MtouchSdkVersion>8.1</MtouchSdkVersion>
-    <MtouchProfiling>False</MtouchProfiling>
-    <MtouchExtraArgs />
-    <MtouchFastDev>False</MtouchFastDev>
-    <MtouchEnableGenericValueTypeSharing>True</MtouchEnableGenericValueTypeSharing>
-    <MtouchUseLlvm>False</MtouchUseLlvm>
-    <MtouchUseThumb>False</MtouchUseThumb>
-    <MtouchUseSGen>False</MtouchUseSGen>
-    <MtouchUseRefCounting>False</MtouchUseRefCounting>
-    <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
-    <MtouchI18n />
+    <MtouchDebug>true</MtouchDebug>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -42,9 +30,8 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <MtouchLink>None</MtouchLink>
-    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchArch>i386</MtouchArch>
     <ConsolePause>false</ConsolePause>
-    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -96,20 +83,15 @@
     <CodesignProvision>Automatic:AppStore</CodesignProvision>
     <CodesignKey>iPhone Distribution</CodesignKey>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Main.cs" />
-    <Compile Include="AppDelegate.cs" />
-    <Compile Include="TestViewController.cs" />
-    <Compile Include="TestViewController.designer.cs">
-      <DependentUpon>TestViewController.cs</DependentUpon>
+    <Compile Include="..\EdSnider.Plugins.AppLookup\AppLookup.cs">
+      <Link>AppLookup.cs</Link>
     </Compile>
-    <None Include="Info.plist" />
+    <Compile Include="AppLookupService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <InterfaceDefinition Include="TestViewController_iPad.xib" />
-    <InterfaceDefinition Include="TestViewController_iPhone.xib" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\Default-568h%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -118,23 +100,10 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\AppLookup\EdSnider.Plugins.AppLookup.iOS\EdSnider.Plugins.AppLookup.iOS.csproj">
-      <Project>{4f7913fe-0fc2-483d-a5e1-750377aee4bb}</Project>
-      <Name>EdSnider.Plugins.AppLookup.iOS</Name>
-      <IsAppExtension>false</IsAppExtension>
-      <IsWatchApp>false</IsWatchApp>
-    </ProjectReference>
     <ProjectReference Include="..\..\EdSnider.Plugins.Core\EdSnider.Plugins.Core.csproj">
       <Project>{2906ba0a-cd3e-4ab3-9e8c-7b4da836fa1f}</Project>
       <Name>EdSnider.Plugins.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Notifier\EdSnider.Plugins.Notifier.iOS\EdSnider.Plugins.Notifier.iOS.csproj">
-      <Project>{46918ae0-cfed-48be-8578-884d249ec936}</Project>
-      <Name>EdSnider.Plugins.Notifier.iOS</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Entitlements.plist" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

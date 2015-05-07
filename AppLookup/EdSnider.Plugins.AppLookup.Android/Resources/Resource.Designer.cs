@@ -9,9 +9,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Android.Runtime.ResourceDesignerAttribute("AndroidApp.Resource", IsApplication=true)]
+[assembly: global::Android.Runtime.ResourceDesignerAttribute("EdSnider.Plugins.Resource", IsApplication=true)]
 
-namespace AndroidApp
+namespace EdSnider.Plugins
 {
 	
 	
@@ -60,11 +60,8 @@ namespace AndroidApp
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050001
-			public const int TestAppLookupButton = 2131034113;
-			
 			// aapt resource value: 0x7f050000
-			public const int TestNotifierButton = 2131034112;
+			public const int MyButton = 2131034112;
 			
 			static Id()
 			{
@@ -95,14 +92,11 @@ namespace AndroidApp
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040002
-			public const int ApplicationName = 2130968578;
-			
 			// aapt resource value: 0x7f040001
-			public const int IsAppInstalled = 2130968577;
+			public const int ApplicationName = 2130968577;
 			
 			// aapt resource value: 0x7f040000
-			public const int ShowNotification = 2130968576;
+			public const int Hello = 2130968576;
 			
 			static String()
 			{

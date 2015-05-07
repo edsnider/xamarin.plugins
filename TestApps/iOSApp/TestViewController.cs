@@ -1,3 +1,4 @@
+using System;
 using System.Drawing;
 using Foundation;
 using UIKit;
@@ -38,26 +39,50 @@ namespace iOSApp
             View.BackgroundColor = UIColor.White;
             View.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 
-            var button = UIButton.FromType(UIButtonType.RoundedRect);
-
-            float width = 100;
-
-            button.Frame = new RectangleF((float)View.Frame.Width / 2 - 100, 
+            var testNotifierButton = UIButton.FromType(UIButtonType.RoundedRect);
+            var testAppLookupButton = UIButton.FromType(UIButtonType.RoundedRect);
+            
+            testNotifierButton.Frame = new RectangleF((float)View.Frame.Width / 2 - 100, 
                                           (float)View.Frame.Height / 2 - 25, 
                                           200, 
                                           50);
 
-            button.SetTitle("Show Notification", UIControlState.Normal);
+            testAppLookupButton.Frame = new RectangleF((float)View.Frame.Width / 2 - 100,
+                                          (float)testNotifierButton.Frame.Y + (float)testNotifierButton.Frame.Height + 25,
+                                          200,
+                                          50);
 
-            button.TouchUpInside += (sender, args) =>
+            testNotifierButton.SetTitle("Show Notification", UIControlState.Normal);
+
+            testAppLookupButton.SetTitle("Is Calendar App Installed", UIControlState.Normal);
+
+            testNotifierButton.TouchUpInside += (sender, args) =>
             {
                 EdSnider.Plugins.Notifier.Current.Show("Test", "This is a test notification");
             };
 
-            button.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleTopMargin | 
+            testAppLookupButton.TouchUpInside += (sender, args) =>
+            {
+                var calAppUrl = "calshow://";
+                var noAppUrl = "noapphasthiscrazyurl://";
+
+                var isCalAppInstalled = EdSnider.Plugins.AppLookup.Current.IsInstalled(packageUrl: calAppUrl);
+                var isNoAppInstalled = EdSnider.Plugins.AppLookup.Current.IsInstalled(packageUrl: noAppUrl);
+
+                var msg = "Calendar app is" + (isNoAppInstalled ? " " : " NOT ") + "installed.";
+
+                UIAlertView alert = new UIAlertView("AppLookup Test", msg, null, "OK");
+                alert.Show();
+            };
+
+            testNotifierButton.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleTopMargin | 
                                       UIViewAutoresizing.FlexibleBottomMargin;
 
-            View.AddSubview(button);
+            testAppLookupButton.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleTopMargin |
+                                      UIViewAutoresizing.FlexibleBottomMargin;
+
+            View.AddSubview(testNotifierButton);
+            View.AddSubview(testAppLookupButton);
         }
     }
 }

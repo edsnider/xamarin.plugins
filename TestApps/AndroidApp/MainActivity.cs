@@ -1,10 +1,7 @@
-﻿using System;
-using Android.App;
-using Android.Content;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+﻿using Android.App;
 using Android.OS;
+using Android.Widget;
+using EdSnider.Plugins;
 
 namespace AndroidApp
 {
@@ -17,16 +14,32 @@ namespace AndroidApp
         {
             base.OnCreate(bundle);
 
-            // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
+            
+            var testNotifierButton = FindViewById<Button>(Resource.Id.TestNotifierButton);
 
-            // Get our button from the layout resource,
-            // and attach an event to it
-            Button button = FindViewById<Button>(Resource.Id.MyButton);
-
-            button.Click += delegate
+            testNotifierButton.Click += delegate
             {
-                EdSnider.Plugins.Notifier.Current.Show("Test", "This is a test notification");
+                Notifier.Current.Show("Test", "This is a test notification");
+            };
+
+            var testAppLookupButton = FindViewById<Button>(Resource.Id.TestAppLookupButton);
+
+            testAppLookupButton.Click += delegate
+            {
+                var calApp = "com.android.calendar";
+                var noApp = "com.noapphasthiscrazyname";
+
+                var isCalAppInstalled = AppLookup.Current.IsInstalled(packageName: calApp);
+                var isNoAppInstalled = AppLookup.Current.IsInstalled(packageName: noApp);
+
+                var msg = "Calendar app is" + (isCalAppInstalled ? " " : " NOT ") + "installed.";
+
+                var builder = new AlertDialog.Builder(this);
+                var alert = builder.Create();
+                alert.SetTitle("AppLookup Test");
+                alert.SetMessage(msg);
+                alert.Show();
             };
         }
     }
