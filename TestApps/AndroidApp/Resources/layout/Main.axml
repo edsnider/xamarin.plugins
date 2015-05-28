@@ -9,6 +9,11 @@
         android:layout_height="wrap_content"
         android:text="@string/ShowNotification" />
     <Button
+        android:id="@+id/TestNotifierCancelButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/CancelNotification" />
+    <Button
         android:id="@+id/TestAppLookupButton"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

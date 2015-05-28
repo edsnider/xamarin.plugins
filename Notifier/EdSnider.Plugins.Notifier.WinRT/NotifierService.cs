@@ -23,7 +23,8 @@ namespace EdSnider.Plugins
         /// </summary>
         /// <param name="title">Title of the notification</param>
         /// <param name="body">Body or description of the notification</param>
-        public void Show(string title, string body)
+        /// <returns>The notification that was displayed</returns>
+        public ILocalNotification Show(string title, string body)
         {
             var xmlData = string.Format(_TOAST_TEXT02_TEMPLATE, title, body);
 
@@ -36,6 +37,18 @@ namespace EdSnider.Plugins
             // Create a toast notifier and show the toast
             var manager = ToastNotificationManager.CreateToastNotifier();
             manager.Show(toast);
+
+            return new LocalNotification(toast);
+        }
+
+        /// <summary>
+        /// Cancel a local toast notification.
+        /// </summary>
+        /// <param name="notification">The notification to cancel</param>
+        public void Hide(ILocalNotification notification)
+        {
+            var manager = ToastNotificationManager.CreateToastNotifier();
+            manager.Hide(((LocalNotification)notification).ToastNotification);
         }
     }
 }

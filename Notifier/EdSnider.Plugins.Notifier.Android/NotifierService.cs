@@ -1,3 +1,4 @@
+using System;
 using Android.App;
 using Android.Content;
 using EdSnider.Plugins.Core;
@@ -14,8 +15,11 @@ namespace EdSnider.Plugins
         /// </summary>
         /// <param name="title">Title of the notification</param>
         /// <param name="body">Body or description of the notification</param>
-        public void Show(string title, string body)
+        /// <returns>The notification that was displayed</returns>
+        public ILocalNotification Show(string title, string body)
         {
+            var notificationId = Guid.NewGuid().GetHashCode();
+
             var builder = new Notification.Builder(Application.Context);
             builder.SetContentTitle(title);
             builder.SetContentText(body);
@@ -25,7 +29,20 @@ namespace EdSnider.Plugins
 
             var manager = Application.Context.GetSystemService(Context.NotificationService) as NotificationManager;
 
-            manager.Notify(0, notification);
+            manager.Notify(notificationId, notification);
+
+            return new LocalNotification(notificationId);
+        }
+
+        /// <summary>
+        /// Cancel a local notification in the Notification Area and Drawer.
+        /// </summary>
+        /// <param name="notification">The notification to cancel</param>
+        public void Hide(ILocalNotification notification)
+        {
+            var manager = Application.Context.GetSystemService(Context.NotificationService) as NotificationManager;
+
+            manager.Cancel(((LocalNotification)notification).NotificationId);
         }
     }
 }

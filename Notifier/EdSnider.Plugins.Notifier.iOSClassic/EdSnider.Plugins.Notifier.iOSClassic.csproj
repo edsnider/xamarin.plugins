@@ -81,6 +81,7 @@
     <Compile Include="..\EdSnider.Plugins.Notifier\Notifier.cs">
       <Link>Notifier.cs</Link>
     </Compile>
+    <Compile Include="LocalNotification.cs" />
     <Compile Include="NotifierService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

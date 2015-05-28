@@ -40,6 +40,7 @@ namespace iOSApp
             View.AutoresizingMask = UIViewAutoresizing.FlexibleWidth | UIViewAutoresizing.FlexibleHeight;
 
             var testNotifierButton = UIButton.FromType(UIButtonType.RoundedRect);
+            var testNotifierCancelButton = UIButton.FromType(UIButtonType.RoundedRect);
             var testAppLookupButton = UIButton.FromType(UIButtonType.RoundedRect);
             
             testNotifierButton.Frame = new RectangleF((float)View.Frame.Width / 2 - 100, 
@@ -47,18 +48,36 @@ namespace iOSApp
                                           200, 
                                           50);
 
-            testAppLookupButton.Frame = new RectangleF((float)View.Frame.Width / 2 - 100,
+            testNotifierCancelButton.Frame = new RectangleF((float)View.Frame.Width / 2 - 100,
                                           (float)testNotifierButton.Frame.Y + (float)testNotifierButton.Frame.Height + 25,
+                                          200,
+                                          50);
+
+            testAppLookupButton.Frame = new RectangleF((float)View.Frame.Width / 2 - 100,
+                                          (float)testNotifierCancelButton.Frame.Y + (float)testNotifierCancelButton.Frame.Height + 25,
                                           200,
                                           50);
 
             testNotifierButton.SetTitle("Show Notification", UIControlState.Normal);
 
+            testNotifierCancelButton.SetTitle("Cancel Notification", UIControlState.Normal);
+
             testAppLookupButton.SetTitle("Is Calendar App Installed", UIControlState.Normal);
+
+            EdSnider.Plugins.Core.ILocalNotification notification = null;
 
             testNotifierButton.TouchUpInside += (sender, args) =>
             {
-                EdSnider.Plugins.Notifier.Current.Show("Test", "This is a test notification");
+                notification = EdSnider.Plugins.Notifier.Current.Show("Test", "This is a test notification");
+            };
+
+            testNotifierCancelButton.TouchUpInside += (sender, args) =>
+            {
+                if (notification != null)
+                {
+                    EdSnider.Plugins.Notifier.Current.Hide(notification);
+                    notification = null;
+                }
             };
 
             testAppLookupButton.TouchUpInside += (sender, args) =>
@@ -82,6 +101,7 @@ namespace iOSApp
                                       UIViewAutoresizing.FlexibleBottomMargin;
 
             View.AddSubview(testNotifierButton);
+            View.AddSubview(testNotifierCancelButton);
             View.AddSubview(testAppLookupButton);
         }
     }
