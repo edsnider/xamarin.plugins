@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IAppLookupService.cs" />
+    <Compile Include="ILocalNotification.cs" />
     <Compile Include="INotifierService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

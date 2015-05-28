@@ -84,6 +84,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\EdSnider.Plugins.Notifier.WinRT\LocalNotification.cs">
+      <Link>LocalNotification.cs</Link>
+    </Compile>
     <Compile Include="..\EdSnider.Plugins.Notifier.WinRT\NotifierService.cs">
       <Link>NotifierService.cs</Link>
     </Compile>

@@ -90,6 +90,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\EdSnider.Plugins.Notifier.iOSClassic\LocalNotification.cs">
+      <Link>LocalNotification.cs</Link>
+    </Compile>
     <Compile Include="..\EdSnider.Plugins.Notifier.iOSClassic\NotifierService.cs">
       <Link>NotifierService.cs</Link>
     </Compile>

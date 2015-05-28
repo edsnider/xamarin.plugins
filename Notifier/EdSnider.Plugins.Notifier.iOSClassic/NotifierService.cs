@@ -20,7 +20,8 @@ namespace EdSnider.Plugins
         /// </summary>
         /// <param name="title">Title of the notification</param>
         /// <param name="body">Body or description of the notification</param>
-        public void Show(string title, string body)
+        /// <returns>The notification that was displayed</returns>
+        public ILocalNotification Show(string title, string body)
         {
             var notification = new UILocalNotification
             {
@@ -30,6 +31,17 @@ namespace EdSnider.Plugins
             };
 
             UIApplication.SharedApplication.ScheduleLocalNotification(notification);
+
+            return new LocalNotification(notification);
+        }
+
+        /// <summary>
+        /// Cancel a local notification in the Notification Center.
+        /// </summary>
+        /// <param name="notification">The notification to cancel</param>
+        public void Hide(ILocalNotification notification)
+        {
+            UIApplication.SharedApplication.CancelLocalNotification(((LocalNotification)notification).UILocalNotification);
         }
     }
 }
