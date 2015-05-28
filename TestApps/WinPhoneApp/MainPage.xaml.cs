@@ -13,6 +13,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using EdSnider.Plugins;
+using EdSnider.Plugins.Core;
 
 namespace WinPhoneApp
 {
@@ -24,10 +25,21 @@ namespace WinPhoneApp
 
             NavigationCacheMode = NavigationCacheMode.Required;
         }
+
+        ILocalNotification notification = null;
         
         private void SendToastClick(object sender, RoutedEventArgs e)
         {
-            Notifier.Current.Show("Test", "This is a test notification");
+            notification = Notifier.Current.Show("Test", "This is a test notification");
+        }
+        
+        private void CancelToastClick(object sender, RoutedEventArgs e)
+        {
+            if (notification != null)
+            {
+                Notifier.Current.Hide(notification);
+                notification = null;
+            }
         }
     }
 }

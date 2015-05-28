@@ -17,6 +17,8 @@
         <StackPanel VerticalAlignment="Center">
             <Button Content="Send Toast"
                     Click="SendToastClick"/>
+            <Button Content="Cancel Toast"
+                    Click="CancelToastClick"/>
         </StackPanel>
     </Grid>
 </phone:PhoneApplicationPage>

@@ -9,7 +9,11 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button Content="Send Toast"
-                Click="SendToastClick"/>
+        <StackPanel VerticalAlignment="Center">
+            <Button Content="Send Toast" HorizontalAlignment="Stretch"
+                    Click="SendToastClick"/>
+            <Button Content="Cancel Toast" HorizontalAlignment="Stretch"
+                    Click="CancelToastClick"/>
+        </StackPanel>
     </Grid>
 </Page>
