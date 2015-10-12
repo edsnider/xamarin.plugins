@@ -9,10 +9,14 @@ Notifier provides a consistent and easy way to show local notifications from wit
 ####Methods
 
     void Show(string title, string body);
+    void Show(string title, string body, int id, DateTime notifyTime);
+    void Cancel(int id);
 
 Usage:
 
     Notifier.Current.Show("You've got mail", "You have 793 unread messages!");
+    Notifier.Current.Show("Good morning", "Time to get up!", 1, DateTime.Now.AddDays(1);
+    Notifier.Current.Cancel(1);
 
 ####Platform Specific Notes
 On Windows and Windows Phone you must enable notifications in the app manifest by setting the "Toast capable" property to "Yes".
@@ -30,7 +34,6 @@ On iOS (as of iOS 8) you must get permission from the user to allow the app to s
 * Windows Phone Silverlight 8.1
 
 ####Features Coming Soon
-* Scheduled notifications
 * Notification images
 * App launch deep linking
 * Xamarin.Forms support
