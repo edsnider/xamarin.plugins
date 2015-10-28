@@ -31,6 +31,13 @@ namespace EdSnider.Plugins
             manager.Notify(0, notification);
         }
 
+        /// <summary>
+        /// Schedule a local notification in the Notification Area and Drawer.
+        /// </summary>
+        /// <param name="title">Title of the notification</param>
+        /// <param name="body">Body or description of the notification</param>
+        /// <param name="id">Id of the notification</param>
+        /// <param name="notifyTime">The time you would like to schedule the notification for</param>
         public void Show(string title, string body, int id, DateTime notifyTime)
         {
             var intent = CreateIntent(id);
@@ -51,6 +58,10 @@ namespace EdSnider.Plugins
             alarmManager.Set(AlarmType.RtcWakeup, triggerTime, pendingIntent);
         }
 
+        /// <summary>
+        /// Show a local toast notification.  Notification will also appear in the Notification Center on Windows Phone 8.1.
+        /// </summary>
+        /// <param name="notificationId">Id of the scheduled notification you'd like to cancel</param>
         public void Cancel(int id)
         {
             var intent = CreateIntent(id);

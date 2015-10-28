@@ -40,6 +40,13 @@ namespace EdSnider.Plugins
             manager.Show(toast);
         }
 
+        /// <summary>
+        /// Schedule a local toast notification.  Notification will also appear in the Notification Center on Windows Phone 8.1.
+        /// </summary>
+        /// <param name="title">Title of the notification</param>
+        /// <param name="body">Body or description of the notification</param>
+        /// <param name="id">Id of the notification</param>
+        /// <param name="notifyTime">Time to show notification</param>
         public void Show(string title, string body, int id, DateTime notifyTime)
         {
             var xmlData = string.Format(_TOAST_TEXT02_TEMPLATE, title, body);
@@ -59,6 +66,10 @@ namespace EdSnider.Plugins
             TileUpdateManager.CreateTileUpdaterForApplication().AddToSchedule(scheduledTileNotification);
         }
 
+        /// <summary>
+        /// Cancel a local notification
+        /// </summary>
+        /// <param name="notificationId">Id of the scheduled notification you'd like to cancel</param>
         public void Cancel(int notificationId)
         {
             var scheduledNotifications = TileUpdateManager.CreateTileUpdaterForApplication().GetScheduledTileNotifications();
