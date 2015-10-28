@@ -54,9 +54,11 @@
     <Compile Include="..\EdSnider.Plugins.Notifier\Notifier.cs">
       <Link>Notifier.cs</Link>
     </Compile>
+    <Compile Include="LocalNotification.cs" />
     <Compile Include="NotifierService.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ScheduledAlarmHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Icon.png" />
