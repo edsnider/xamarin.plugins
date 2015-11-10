@@ -1,48 +1,60 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
     <metadata minClientVersion="2.8.1">
         <id>Xam.Plugins.Notifier</id>
-        <version>1.0.2</version>
+        <version>1.1.0-alpha1</version>
         <title>Local Notification Plugin for Xamarin and Windows</title>
-        <authors>Ed Snider</authors>
-        <owners>Ed Snider</owners>
+        <authors>Ed Snider, Krystin Stutesman</authors>
+        <owners>Ed Snider, Krystin Stutesman</owners>
         <licenseUrl>https://github.com/edsnider/Xamarin.Plugins/blob/master/LICENSE</licenseUrl>
 	<iconUrl>https://raw.githubusercontent.com/edsnider/Xamarin.Plugins/3c15d0084211d8b608f16f611fe064e9d5052f2e/Notifier/NuGet/Xam.Plugins.Notifier.icon.png</iconUrl>
         <projectUrl>https://github.com/edsnider/Xamarin.Plugins</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>The local notification plugin provides a simple, cross-platform way to show local notifications from within native mobile applications. Works with Xamarin.Android, Xamarin.iOS (Classic and Unified), Windows 8.1, Windows Phone 8.1, and Windows Phone Silverlight 8.1.</description>
         <summary>Cross platform plugin to show local notifications.</summary>
-        <releaseNotes>Added documentation.</releaseNotes>
+        <releaseNotes>Added ability to schedule and cancel notifications.</releaseNotes>
         <tags>toast, alert, notifications, xamarin, winrt, pcl, winphone, wp8, android, ios, xam.plugins, xam.pcl</tags>
     </metadata>
     <files>
-	<file src="EdSnider.Plugins.Notifier.Android\bin\Release\EdSnider.Plugins.Core.dll" target="lib\MonoAndroid10\EdSnider.Plugins.Core.dll" />
-        <file src="EdSnider.Plugins.Notifier.Android\bin\Release\EdSnider.Plugins.Notifier.dll" target="lib\MonoAndroid10\EdSnider.Plugins.Notifier.dll" />
-        <file src="EdSnider.Plugins.Notifier.Android\bin\Release\EdSnider.Plugins.Core.xml" target="lib\MonoAndroid10\EdSnider.Plugins.Core.xml" />
-        <file src="EdSnider.Plugins.Notifier.Android\bin\Release\EdSnider.Plugins.Notifier.XML" target="lib\MonoAndroid10\EdSnider.Plugins.Notifier.XML" />
-        <file src="EdSnider.Plugins.Notifier.iOSClassic\bin\iPhoneSimulator\Release\EdSnider.Plugins.Core.dll" target="lib\MonoTouch10\EdSnider.Plugins.Core.dll" />
-        <file src="EdSnider.Plugins.Notifier.iOSClassic\bin\iPhoneSimulator\Release\EdSnider.Plugins.Core.xml" target="lib\MonoTouch10\EdSnider.Plugins.Core.xml" />
-        <file src="EdSnider.Plugins.Notifier.iOSClassic\bin\iPhoneSimulator\Release\EdSnider.Plugins.Notifier.dll" target="lib\MonoTouch10\EdSnider.Plugins.Notifier.dll" />
-        <file src="EdSnider.Plugins.Notifier.iOSClassic\bin\iPhoneSimulator\Release\EdSnider.Plugins.Notifier.XML" target="lib\MonoTouch10\EdSnider.Plugins.Notifier.XML" />
+        <!--PCL-->
         <file src="EdSnider.Plugins.Notifier\bin\Release\EdSnider.Plugins.Core.dll" target="lib\portable-net45+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\EdSnider.Plugins.Core.dll" />
         <file src="EdSnider.Plugins.Notifier\bin\Release\EdSnider.Plugins.Notifier.dll" target="lib\portable-net45+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\EdSnider.Plugins.Notifier.dll" />
         <file src="EdSnider.Plugins.Notifier\bin\Release\EdSnider.Plugins.Core.xml" target="lib\portable-net45+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\EdSnider.Plugins.Core.xml" />
         <file src="EdSnider.Plugins.Notifier\bin\Release\EdSnider.Plugins.Notifier.XML" target="lib\portable-net45+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10\EdSnider.Plugins.Notifier.XML" />
+        
+        <!--Android-->
+	      <file src="EdSnider.Plugins.Notifier.Android\bin\Release\EdSnider.Plugins.Core.dll" target="lib\MonoAndroid10\EdSnider.Plugins.Core.dll" />
+        <file src="EdSnider.Plugins.Notifier.Android\bin\Release\EdSnider.Plugins.Notifier.dll" target="lib\MonoAndroid10\EdSnider.Plugins.Notifier.dll" />
+        <file src="EdSnider.Plugins.Notifier.Android\bin\Release\EdSnider.Plugins.Core.xml" target="lib\MonoAndroid10\EdSnider.Plugins.Core.xml" />
+        <file src="EdSnider.Plugins.Notifier.Android\bin\Release\EdSnider.Plugins.Notifier.XML" target="lib\MonoAndroid10\EdSnider.Plugins.Notifier.XML" />
+        
+        <!--iOS Classic-->
+        <file src="EdSnider.Plugins.Notifier.iOSClassic\bin\iPhone\Release\EdSnider.Plugins.Core.dll" target="lib\MonoTouch10\EdSnider.Plugins.Core.dll" />
+        <file src="EdSnider.Plugins.Notifier.iOSClassic\bin\iPhone\Release\EdSnider.Plugins.Core.xml" target="lib\MonoTouch10\EdSnider.Plugins.Core.xml" />
+        <file src="EdSnider.Plugins.Notifier.iOSClassic\bin\iPhone\Release\EdSnider.Plugins.Notifier.dll" target="lib\MonoTouch10\EdSnider.Plugins.Notifier.dll" />
+        <file src="EdSnider.Plugins.Notifier.iOSClassic\bin\iPhone\Release\EdSnider.Plugins.Notifier.XML" target="lib\MonoTouch10\EdSnider.Plugins.Notifier.XML" />
+        <!--WinRT Store-->
         <file src="EdSnider.Plugins.Notifier.WinRT\bin\Release\EdSnider.Plugins.Core.dll" target="lib\win8\EdSnider.Plugins.Core.dll" />
         <file src="EdSnider.Plugins.Notifier.WinRT\bin\Release\EdSnider.Plugins.Core.xml" target="lib\win8\EdSnider.Plugins.Core.xml" />
         <file src="EdSnider.Plugins.Notifier.WinRT\bin\Release\EdSnider.Plugins.Notifier.dll" target="lib\win8\EdSnider.Plugins.Notifier.dll" />
         <file src="EdSnider.Plugins.Notifier.WinRT\bin\Release\EdSnider.Plugins.Notifier.XML" target="lib\win8\EdSnider.Plugins.Notifier.XML" />
+        
+        <!--Win Phone Silverlight-->
         <file src="EdSnider.Plugins.Notifier.WinPhoneSL\Bin\Release\EdSnider.Plugins.Core.dll" target="lib\wp81\EdSnider.Plugins.Core.dll" />
         <file src="EdSnider.Plugins.Notifier.WinPhoneSL\Bin\Release\EdSnider.Plugins.Core.xml" target="lib\wp81\EdSnider.Plugins.Core.xml" />
         <file src="EdSnider.Plugins.Notifier.WinPhoneSL\Bin\Release\EdSnider.Plugins.Notifier.dll" target="lib\wp81\EdSnider.Plugins.Notifier.dll" />
         <file src="EdSnider.Plugins.Notifier.WinPhoneSL\Bin\Release\EdSnider.Plugins.Notifier.XML" target="lib\wp81\EdSnider.Plugins.Notifier.XML" />
+       
+      <!--WinRT Phone-->
         <file src="EdSnider.Plugins.Notifier.WinRT\bin\Release\EdSnider.Plugins.Core.dll" target="lib\wpa81\EdSnider.Plugins.Core.dll" />
         <file src="EdSnider.Plugins.Notifier.WinRT\bin\Release\EdSnider.Plugins.Core.xml" target="lib\wpa81\EdSnider.Plugins.Core.xml" />
         <file src="EdSnider.Plugins.Notifier.WinRT\bin\Release\EdSnider.Plugins.Notifier.dll" target="lib\wpa81\EdSnider.Plugins.Notifier.dll" />
         <file src="EdSnider.Plugins.Notifier.WinRT\bin\Release\EdSnider.Plugins.Notifier.XML" target="lib\wpa81\EdSnider.Plugins.Notifier.XML" />
-        <file src="EdSnider.Plugins.Notifier.iOS\bin\iPhoneSimulator\Release\EdSnider.Plugins.Core.dll" target="lib\Xamarin.iOS10\EdSnider.Plugins.Core.dll" />
-        <file src="EdSnider.Plugins.Notifier.iOS\bin\iPhoneSimulator\Release\EdSnider.Plugins.Core.xml" target="lib\Xamarin.iOS10\EdSnider.Plugins.Core.xml" />
-        <file src="EdSnider.Plugins.Notifier.iOS\bin\iPhoneSimulator\Release\EdSnider.Plugins.Notifier.dll" target="lib\Xamarin.iOS10\EdSnider.Plugins.Notifier.dll" />
-        <file src="EdSnider.Plugins.Notifier.iOS\bin\iPhoneSimulator\Release\EdSnider.Plugins.Notifier.XML" target="lib\Xamarin.iOS10\EdSnider.Plugins.Notifier.XML" />
+       
+      <!--iOS Unified-->
+        <file src="EdSnider.Plugins.Notifier.iOS\bin\iPhone\Release\EdSnider.Plugins.Core.dll" target="lib\Xamarin.iOS10\EdSnider.Plugins.Core.dll" />
+        <file src="EdSnider.Plugins.Notifier.iOS\bin\iPhone\Release\EdSnider.Plugins.Core.xml" target="lib\Xamarin.iOS10\EdSnider.Plugins.Core.xml" />
+        <file src="EdSnider.Plugins.Notifier.iOS\bin\iPhone\Release\EdSnider.Plugins.Notifier.dll" target="lib\Xamarin.iOS10\EdSnider.Plugins.Notifier.dll" />
+        <file src="EdSnider.Plugins.Notifier.iOS\bin\iPhone\Release\EdSnider.Plugins.Notifier.XML" target="lib\Xamarin.iOS10\EdSnider.Plugins.Notifier.XML" />
     </files>
 </package>

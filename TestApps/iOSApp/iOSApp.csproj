@@ -24,16 +24,11 @@
     <MtouchDebug>True</MtouchDebug>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <MtouchSdkVersion>8.1</MtouchSdkVersion>
-    <MtouchProfiling>False</MtouchProfiling>
-    <MtouchExtraArgs />
-    <MtouchFastDev>False</MtouchFastDev>
-    <MtouchEnableGenericValueTypeSharing>True</MtouchEnableGenericValueTypeSharing>
-    <MtouchUseLlvm>False</MtouchUseLlvm>
-    <MtouchUseThumb>False</MtouchUseThumb>
-    <MtouchUseSGen>False</MtouchUseSGen>
-    <MtouchUseRefCounting>False</MtouchUseRefCounting>
+    <MtouchExtraArgs>
+    </MtouchExtraArgs>
     <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
-    <MtouchI18n />
+    <MtouchI18n>
+    </MtouchI18n>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -119,17 +114,17 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\AppLookup\EdSnider.Plugins.AppLookup.iOS\EdSnider.Plugins.AppLookup.iOS.csproj">
-      <Project>{4f7913fe-0fc2-483d-a5e1-750377aee4bb}</Project>
+      <Project>{4F7913FE-0FC2-483D-A5E1-750377AEE4BB}</Project>
       <Name>EdSnider.Plugins.AppLookup.iOS</Name>
-      <IsAppExtension>false</IsAppExtension>
-      <IsWatchApp>false</IsWatchApp>
+      <IsAppExtension>False</IsAppExtension>
+      <IsWatchApp>False</IsWatchApp>
     </ProjectReference>
     <ProjectReference Include="..\..\EdSnider.Plugins.Core\EdSnider.Plugins.Core.csproj">
-      <Project>{2906ba0a-cd3e-4ab3-9e8c-7b4da836fa1f}</Project>
+      <Project>{2906BA0A-CD3E-4AB3-9E8C-7B4DA836FA1F}</Project>
       <Name>EdSnider.Plugins.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Notifier\EdSnider.Plugins.Notifier.iOS\EdSnider.Plugins.Notifier.iOS.csproj">
-      <Project>{46918ae0-cfed-48be-8578-884d249ec936}</Project>
+      <Project>{46918AE0-CFED-48BE-8578-884D249EC936}</Project>
       <Name>EdSnider.Plugins.Notifier.iOS</Name>
     </ProjectReference>
   </ItemGroup>
