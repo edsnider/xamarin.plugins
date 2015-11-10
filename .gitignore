@@ -18,6 +18,8 @@ bld/
 [Bb]in/
 [Oo]bj/
 
+*.nuget/
+
 # Roslyn cache directories
 *.ide/
 

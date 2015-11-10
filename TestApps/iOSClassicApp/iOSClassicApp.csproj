@@ -3,8 +3,6 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
-    <ProductVersion>8.0.30703</ProductVersion>
-    <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{C1C9F027-61B2-4BBD-B5D2-7501198E8E87}</ProjectGuid>
     <ProjectTypeGuids>{6BC8ED88-2882-458C-8E55-DFD12B67127B};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
@@ -24,17 +22,12 @@
     <MtouchLink>None</MtouchLink>
     <MtouchDebug>True</MtouchDebug>
     <MtouchSdkVersion>8.1</MtouchSdkVersion>
-    <MtouchProfiling>False</MtouchProfiling>
-    <MtouchExtraArgs />
-    <MtouchFastDev>False</MtouchFastDev>
-    <MtouchEnableGenericValueTypeSharing>True</MtouchEnableGenericValueTypeSharing>
+    <MtouchExtraArgs>
+    </MtouchExtraArgs>
     <MtouchArch>Default, ARMv7</MtouchArch>
-    <MtouchUseLlvm>False</MtouchUseLlvm>
-    <MtouchUseThumb>False</MtouchUseThumb>
-    <MtouchUseSGen>False</MtouchUseSGen>
-    <MtouchUseRefCounting>False</MtouchUseRefCounting>
     <MtouchOptimizePNGs>True</MtouchOptimizePNGs>
-    <MtouchI18n />
+    <MtouchI18n>
+    </MtouchI18n>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -102,11 +95,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\EdSnider.Plugins.Core\EdSnider.Plugins.Core.csproj">
-      <Project>{2906ba0a-cd3e-4ab3-9e8c-7b4da836fa1f}</Project>
+      <Project>{2906BA0A-CD3E-4AB3-9E8C-7B4DA836FA1F}</Project>
       <Name>EdSnider.Plugins.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Notifier\EdSnider.Plugins.Notifier.iOSClassic\EdSnider.Plugins.Notifier.iOSClassic.csproj">
-      <Project>{61240b5d-fd9f-4dd9-8f8b-fde6bf4e8bfd}</Project>
+      <Project>{61240B5D-FD9F-4DD9-8F8B-FDE6BF4E8BFD}</Project>
       <Name>EdSnider.Plugins.Notifier.iOSClassic</Name>
     </ProjectReference>
   </ItemGroup>

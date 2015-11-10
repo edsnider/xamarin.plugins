@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <MinimumVisualStudioVersion>10.0</MinimumVisualStudioVersion>
@@ -36,7 +36,7 @@
   <ItemGroup>
     <!-- A reference to the entire .NET Framework is automatically included -->
     <ProjectReference Include="..\..\EdSnider.Plugins.Core\EdSnider.Plugins.Core.csproj">
-      <Project>{2906ba0a-cd3e-4ab3-9e8c-7b4da836fa1f}</Project>
+      <Project>{2906BA0A-CD3E-4AB3-9E8C-7B4DA836FA1F}</Project>
       <Name>EdSnider.Plugins.Core</Name>
     </ProjectReference>
   </ItemGroup>

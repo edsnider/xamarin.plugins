@@ -1,11 +1,23 @@
-﻿<Properties RefactoringSettings.EnableRefactorings="True" StartupItem="EdSnider.Plugins.Core/EdSnider.Plugins.Core.csproj">
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+﻿<Properties RefactoringSettings.EnableRefactorings="True" StartupItem="Notifier/EdSnider.Plugins.Notifier.Android/EdSnider.Plugins.Notifier.Android.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Release" PreferredExecutionTarget="Android.Nexus 4 (KitKat)" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Notifier/EdSnider.Plugins.Notifier.iOSClassic/NotifierService.cs">
     <Files>
       <File FileName="EdSnider.Plugins.Core/INotifierService.cs" Line="1" Column="1" />
-      <File FileName="Notifier/EdSnider.Plugins.Notifier.iOSClassic/NotifierService.cs" Line="11" Column="27" />
+      <File FileName="Notifier/EdSnider.Plugins.Notifier.iOSClassic/NotifierService.cs" Line="33" Column="15" />
       <File FileName="Notifier/EdSnider.Plugins.Notifier.Android/NotifierService.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Xamarin.Plugins" expanded="True">
+            <Node name="Notifier" expanded="True">
+              <Node name="EdSnider.Plugins.Notifier.iOS" expanded="True" />
+              <Node name="EdSnider.Plugins.Notifier.WinRT" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
