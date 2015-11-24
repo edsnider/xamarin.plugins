@@ -29,7 +29,7 @@ namespace Plugin.LocalNotifications
             var builder = new Notification.Builder(Application.Context)
                 .SetContentTitle(notification.Title)
                 .SetContentText(notification.Body)
-                .SetSmallIcon(Application.Context.ApplicationInfo.Icon);
+                .SetSmallIcon(notification.IconId);
             var nativeNotification = builder.Build();
 
             var notificationManager = Application.Context.GetSystemService(Context.NotificationService) as NotificationManager;

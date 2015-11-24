@@ -59,6 +59,14 @@ namespace Plugin.LocalNotifications
             localNotification.Body = body;
             localNotification.Id = id;
             localNotification.NotifyTime = notifyTime;
+            if (NotificationIconId != 0)
+            {
+                localNotification.IconId = NotificationIconId;
+            }
+            else
+            {
+                localNotification.IconId = Resource.Drawable.plugin_lc_smallicon;
+            }
 
             var serializedNotification = SerializeNotification(localNotification);
             intent.PutExtra(ScheduledAlarmHandler.LocalNotificationKey, serializedNotification);
