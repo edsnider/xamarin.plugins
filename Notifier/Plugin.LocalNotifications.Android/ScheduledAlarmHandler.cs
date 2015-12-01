@@ -2,6 +2,7 @@ using System.IO;
 using System.Xml.Serialization;
 using Android.App;
 using Android.Content;
+using Android.Support.V4.App;
 
 namespace Plugin.LocalNotifications
 {
@@ -26,14 +27,21 @@ namespace Plugin.LocalNotifications
             var extra = intent.GetStringExtra(LocalNotificationKey);
             var notification = serializeFromString(extra);
 
-            var builder = new Notification.Builder(Application.Context)
+            var builder = new NotificationCompat.Builder(Application.Context)
                 .SetContentTitle(notification.Title)
                 .SetContentText(notification.Body)
                 .SetSmallIcon(notification.IconId);
-            var nativeNotification = builder.Build();
 
-            var notificationManager = Application.Context.GetSystemService(Context.NotificationService) as NotificationManager;
-            notificationManager.Notify(notification.Id, nativeNotification);
+            var resultIntent = LocalNotificationsImplementation.GetLauncherActivity();
+            resultIntent.SetFlags(ActivityFlags.NewTask | ActivityFlags.ClearTask);
+            var stackBuilder = Android.Support.V4.App.TaskStackBuilder.Create(Application.Context);
+            stackBuilder.AddNextIntent(resultIntent);
+            var resultPendingIntent =
+                stackBuilder.GetPendingIntent(0, (int)PendingIntentFlags.UpdateCurrent);
+            builder.SetContentIntent(resultPendingIntent);
+
+            var notificationManager = NotificationManagerCompat.From(Application.Context);
+            notificationManager.Notify(notification.Id, builder.Build());
         }
 
         private LocalNotification serializeFromString(string notificationString)

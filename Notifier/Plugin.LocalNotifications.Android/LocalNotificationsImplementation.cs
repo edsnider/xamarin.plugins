@@ -38,11 +38,25 @@ namespace Plugin.LocalNotifications
             {
                 builder.SetSmallIcon(Resource.Drawable.plugin_lc_smallicon);
             }
-            
+
+            var resultIntent = GetLauncherActivity();
+            resultIntent.SetFlags(ActivityFlags.NewTask | ActivityFlags.ClearTask);
+            var stackBuilder = Android.Support.V4.App.TaskStackBuilder.Create(Application.Context);
+            stackBuilder.AddNextIntent(resultIntent);
+            var resultPendingIntent =
+                stackBuilder.GetPendingIntent(0, (int)PendingIntentFlags.UpdateCurrent);
+            builder.SetContentIntent(resultPendingIntent);
+
             var notificationManager = NotificationManagerCompat.From(Application.Context);
             notificationManager.Notify(id, builder.Build());
         }
 
+
+        public static Intent GetLauncherActivity()
+        {
+            var packageName = Application.Context.PackageName;
+            return Application.Context.PackageManager.GetLaunchIntentForPackage(packageName);
+        }
         /// <summary>
         /// Schedule a local notification in the Notification Area and Drawer.
         /// </summary>
@@ -90,7 +104,7 @@ namespace Plugin.LocalNotifications
             var alarmManager = GetAlarmManager();
             alarmManager.Cancel(pendingIntent);
 
-            var notificationManager = GetNotificationManager();
+            var notificationManager = NotificationManagerCompat.From(Application.Context);
             notificationManager.Cancel(id);
         }
 
@@ -100,11 +114,6 @@ namespace Plugin.LocalNotifications
                 .SetAction("LocalNotifierIntent" + id);
         }
 
-        private NotificationManager GetNotificationManager()
-        {
-            var notificationManager = Application.Context.GetSystemService(Context.NotificationService) as NotificationManager;
-            return notificationManager;
-        }
 
         private AlarmManager GetAlarmManager()
         {

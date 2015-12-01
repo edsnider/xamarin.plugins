@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:m2="http://schemas.microsoft.com/appx/2013/manifest" xmlns:m3="http://schemas.microsoft.com/appx/2014/manifest" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest">
-  <Identity Name="a321fb56-7678-4816-ba32-33486df23e7c" Publisher="CN=Ed" Version="2.0.0.0" />
+  <Identity Name="a321fb56-7678-4816-ba32-33486df23e7c" Publisher="CN=Ed" Version="2.0.1.0" />
   <mp:PhoneIdentity PhoneProductId="a5c02ff0-fa55-4c1b-9686-5b63c59c366d" PhonePublisherId="74db6f92-6ad3-4b4e-8773-4c37f3ca0571" />
   <Properties>
     <DisplayName>WinPhoneSLApp</DisplayName>
