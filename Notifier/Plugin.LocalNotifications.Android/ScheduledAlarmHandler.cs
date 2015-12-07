@@ -25,12 +25,13 @@ namespace Plugin.LocalNotifications
         public override void OnReceive(Context context, Intent intent)
         {
             var extra = intent.GetStringExtra(LocalNotificationKey);
-            var notification = serializeFromString(extra);
+            var notification = DeserializeNotification(extra);
 
             var builder = new NotificationCompat.Builder(Application.Context)
                 .SetContentTitle(notification.Title)
                 .SetContentText(notification.Body)
-                .SetSmallIcon(notification.IconId);
+                .SetSmallIcon(notification.IconId)
+                .SetAutoCancel(true);
 
             var resultIntent = LocalNotificationsImplementation.GetLauncherActivity();
             resultIntent.SetFlags(ActivityFlags.NewTask | ActivityFlags.ClearTask);
@@ -44,7 +45,7 @@ namespace Plugin.LocalNotifications
             notificationManager.Notify(notification.Id, builder.Build());
         }
 
-        private LocalNotification serializeFromString(string notificationString)
+        private LocalNotification DeserializeNotification(string notificationString)
         {
             var xmlSerializer = new XmlSerializer(typeof(LocalNotification));
             using (var stringReader = new StringReader(notificationString))

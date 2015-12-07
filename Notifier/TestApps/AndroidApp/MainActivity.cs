@@ -2,6 +2,7 @@
 using Android.OS;
 using Android.Widget;
 using Plugin.LocalNotifications;
+using System;
 
 namespace AndroidApp
 {
@@ -21,6 +22,7 @@ namespace AndroidApp
             testNotifierButton.Click += delegate
             {
                 CrossLocalNotifications.Current.Show("Test", "This is a test notification");
+                CrossLocalNotifications.Current.Show("Test", "This is a test notification from the future.", 1, DateTime.Now.AddMinutes(1));
             };
 
             var testAppLookupButton = FindViewById<Button>(Resource.Id.TestAppLookupButton);

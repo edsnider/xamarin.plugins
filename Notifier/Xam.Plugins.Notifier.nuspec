@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/01/nuspec.xsd">
     <metadata minClientVersion="2.8.1">
         <id>Xam.Plugins.Notifier</id>
-        <version>2.0.1</version>
+        <version>2.0.2</version>
         <title>Local Notifications Plugin for Xamarin and Windows</title>
         <authors>Ed Snider, Krystin Stutesman, James Montemagno</authors>
         <owners>Ed Snider, Krystin Stutesman, James Montemagno</owners>
@@ -12,13 +12,17 @@
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
         <description>The local notification plugin provides a simple, cross-platform way to show local notifications from within native mobile applications. Works with Xamarin.Android, Xamarin.iOS (Classic and Unified), Windows 8.1, Windows Phone 8.1, and Windows Phone Silverlight 8.1.</description>
         <summary>Cross platform plugin to show local notifications.</summary>
-        <releaseNotes>Added ability to schedule and cancel notifications.</releaseNotes>
         <tags>toast, alert, notifications, xamarin, winrt, pcl, winphone, wp8, android, ios, xam.plugins, xam.pcl</tags>
         <dependencies>
             <group targetFramework="MonoAndroid10">
                 <dependency id="Xamarin.Android.Support.v4" version="23.0.1.3"/>
             </group>
         </dependencies>
+        <releaseNotes>
+            [2.0.2]
+            -Fix issue with serializing schedule notification on Android
+            -Auto clear future when tapped
+        </releaseNotes>
     </metadata>
     <files>
 
