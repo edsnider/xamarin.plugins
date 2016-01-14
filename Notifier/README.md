@@ -2,6 +2,19 @@
 
 Notifier provides a consistent and easy way to show local notifications from within a native mobile app with a single line of code. Notifications are handled and displayed natively for each respective platform OS so they will appear in the notification center on iOS, Android and Windows Phone and will display a toast on Windows and Windows Phone.
 
+**Platform Support**
+
+|Platform|Supported|Version|
+| ------------------- | :-----------: | :------------------: |
+|Xamarin.iOS|Yes|iOS 7+|
+|Xamarin.iOS Unified|Yes|iOS 7+|
+|Xamarin.Android|Yes|API 10+|
+|Windows Phone Silverlight|Yes|8.1+|
+|Windows Phone RT|Yes|8.1+|
+|Windows Store RT|Yes|8.1+|
+|Windows 10 UWP|Yes|10+|
+|Xamarin.Mac|No||
+
 ## Methods
 
 ```csharp
@@ -39,15 +52,6 @@ Cancel Notification
 Usage:
 
     Notifier.Current.Show("You've got mail", "You have 793 unread messages!");
-
-**Supports**
-* Xamarin.iOS
-* Xamarin.iOS (x64 Unified)
-* Xamarin.Android
-* Windows Phone 8.1 (Silverlight) (8.0 not supported)
-* Windows Ptone 8.1 RT
-* Windows Store 8.1
-* UWP - Windows 10
 
 
 ## Platform Specific Notes
