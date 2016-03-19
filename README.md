@@ -34,6 +34,4 @@ On iOS (as of iOS 8) you must get permission from the user to allow the app to s
 * Windows Phone Silverlight 8.1
 
 ####Features Coming Soon
-* Notification images
 * App launch deep linking
-* Xamarin.Forms support
