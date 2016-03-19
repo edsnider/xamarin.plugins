@@ -32,6 +32,7 @@ On iOS (as of iOS 8) you must get permission from the user to allow the app to s
 * Windows 8.1
 * Windows Phone 8.1
 * Windows Phone Silverlight 8.1
+* Windows 10 UWP
 
 ####Features Coming Soon
 * App launch deep linking
