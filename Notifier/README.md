@@ -64,4 +64,14 @@ You must enable notifications in the app manifest by setting the "Toast capable"
 ### iOS (as of iOS 8) 
 You must get permission from the user to allow the app to show local notifications.  Details on how to do this are here thanks to [Larry O'Brien](https://twitter.com/lobrien): [http://www.knowing.net/index.php/2014/07/03/local-notifications-in-ios-8-with-xamarin/](http://www.knowing.net/index.php/2014/07/03/local-notifications-in-ios-8-with-xamarin/)
 
+### Android
+Currently, if the phone is re-booted then the pending notifications are not sent, you should save them out to settings and re-send on re-boot.
+
+#### Notification Icon on Android
+You can set the notification Icon by setting the following property from inside your Android project:
+
+```
+LocalNotificationsImplementation.NotificationIconId = Resrouce.Drawable.YOU_ICON_HERE
+```
+
 
