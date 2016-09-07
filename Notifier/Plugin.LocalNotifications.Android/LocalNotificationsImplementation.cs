@@ -40,18 +40,12 @@ namespace Plugin.LocalNotifications
             }
 
             var resultIntent = GetLauncherActivity();
-			//resultIntent.SetFlags(ActivityFlags.NewTask | ActivityFlags.ClearTask);
-			//var stackBuilder = Android.Support.V4.App.TaskStackBuilder.Create(Application.Context);
-			//stackBuilder.AddNextIntent(resultIntent);
-			//var resultPendingIntent =
-			//    stackBuilder.GetPendingIntent(0, (int)PendingIntentFlags.UpdateCurrent);
-
-			var resultPendingIntent = PendingIntent.GetActivity(
-				Application.Context,
-				0,
-				resultIntent,
-				PendingIntentFlags.UpdateCurrent
-			);
+            var resultPendingIntent = PendingIntent.GetActivity(
+                Application.Context,
+                0,
+                resultIntent,
+                PendingIntentFlags.UpdateCurrent
+            );
 
             builder.SetContentIntent(resultPendingIntent);
 
