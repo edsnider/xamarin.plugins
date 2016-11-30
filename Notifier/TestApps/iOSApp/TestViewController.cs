@@ -2,6 +2,7 @@ using System.Drawing;
 using Foundation;
 using UIKit;
 using Plugin.LocalNotifications;
+using System;
 
 namespace iOSApp
 {
@@ -58,8 +59,8 @@ namespace iOSApp
 
             testNotifierButton.TouchUpInside += (sender, args) =>
             {
-               
                 CrossLocalNotifications.Current.Show("Test", "This is a test notification");
+                CrossLocalNotifications.Current.Show("Test", "This is a test notification from the future.", 0, DateTime.Now.AddMinutes(1)); 
             };
             
 

@@ -31,7 +31,8 @@ namespace Plugin.LocalNotifications
                 FireDate = (NSDate)DateTime.Now,
                 AlertAction = title,
                 AlertBody = body,
-                UserInfo = NSDictionary.FromObjectAndKey(NSObject.FromObject(id), NSObject.FromObject(NotificationKey))
+                UserInfo = NSDictionary.FromObjectAndKey(NSObject.FromObject(id), NSObject.FromObject(NotificationKey)),
+                SoundName = UILocalNotification.DefaultSoundName,
             };
 
             UIApplication.SharedApplication.ScheduleLocalNotification(notification);

@@ -31,7 +31,9 @@ namespace Plugin.LocalNotifications
                 .SetContentTitle(notification.Title)
                 .SetContentText(notification.Body)
                 .SetSmallIcon(notification.IconId)
-                .SetAutoCancel(true);
+                .SetAutoCancel(true)
+                .SetDefaults((int)(NotificationDefaults.Sound | NotificationDefaults.Vibrate))
+                .SetVibrate(new long[] { 100, 200, 300 }); ;
 
             var resultIntent = LocalNotificationsImplementation.GetLauncherActivity();
             resultIntent.SetFlags(ActivityFlags.NewTask | ActivityFlags.ClearTask);

@@ -29,6 +29,8 @@ namespace Plugin.LocalNotifications
             builder.SetContentTitle(title);
             builder.SetContentText(body);
             builder.SetAutoCancel(true);
+            builder.SetDefaults((int)(NotificationDefaults.Sound | NotificationDefaults.Vibrate));
+            builder.SetVibrate(new long[] { 100, 200, 300 });
 
             if (NotificationIconId != 0)
             {
