@@ -64,7 +64,8 @@ namespace Plugin.LocalNotifications
         /// <param name="body">Body or description of the notification</param>
         /// <param name="id">Id of the notification</param>
         /// <param name="notifyTime">The time you would like to schedule the notification for</param>
-        public void Show(string title, string body, int id, DateTime notifyTime)
+		/// <param name="hasSound">Flag to control if notification will play a sound</param>
+        public void Show(string title, string body, int id, DateTime notifyTime, bool hasSound = false)
         {
             var intent = CreateIntent(id);
 
@@ -73,6 +74,7 @@ namespace Plugin.LocalNotifications
             localNotification.Body = body;
             localNotification.Id = id;
             localNotification.NotifyTime = notifyTime;
+            localNotification.HasSound = hasSound;
             if (NotificationIconId != 0)
             {
                 localNotification.IconId = NotificationIconId;

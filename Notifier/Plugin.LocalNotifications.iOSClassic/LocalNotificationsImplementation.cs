@@ -44,14 +44,16 @@ namespace Plugin.LocalNotifications
         /// <param name="body">Body or description of the notification</param>
         /// <param name="id">Id of the notification</param>
         /// <param name="notifyTime">The time you would like to schedule the notification for</param>
-        public void Show(string title, string body, int id, DateTime notifyTime)
+		/// <param name="hasSound">Flag to control if notification will play a sound</param>
+        public void Show(string title, string body, int id, DateTime notifyTime, bool hasSound = false)
         {
             var notification = new UILocalNotification
             {
                 FireDate = (NSDate)notifyTime,
                 AlertAction = title,
                 AlertBody = body,
-                UserInfo = NSDictionary.FromObjectAndKey(NSObject.FromObject(id), NSObject.FromObject(NotificationKey))
+                UserInfo = NSDictionary.FromObjectAndKey(NSObject.FromObject(id), NSObject.FromObject(NotificationKey)),
+                SoundName = hasSound ? UILocalNotification.DefaultSoundName : null
             };
 
             UIApplication.SharedApplication.ScheduleLocalNotification(notification);

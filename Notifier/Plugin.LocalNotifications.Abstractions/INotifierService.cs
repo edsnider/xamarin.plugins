@@ -22,7 +22,8 @@ namespace Plugin.LocalNotifications.Abstractions
         /// <param name="body">Body or description of the notification</param>
         /// <param name="id">Id of the notification</param>
         /// <param name="notifyTime">Time to show notification</param>
-        void Show(string title, string body, int id, DateTime notifyTime);
+        /// <param name="hasSound">Flag to control if notification will play a sound</param>
+        void Show(string title, string body, int id, DateTime notifyTime, bool hasSound = false);
 
         /// <summary>
         /// Cancel a local notification

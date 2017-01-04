@@ -33,6 +33,9 @@ namespace Plugin.LocalNotifications
                 .SetSmallIcon(notification.IconId)
                 .SetAutoCancel(true);
 
+            if (notification.HasSound)
+                builder.SetDefaults((int)NotificationDefaults.Sound);
+
             var resultIntent = LocalNotificationsImplementation.GetLauncherActivity();
             resultIntent.SetFlags(ActivityFlags.NewTask | ActivityFlags.ClearTask);
             var stackBuilder = Android.Support.V4.App.TaskStackBuilder.Create(Application.Context);
