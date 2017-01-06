@@ -9,5 +9,7 @@ namespace Plugin.LocalNotifications
         public int Id { get; set; }
         public int IconId { get; set; }
         public DateTime NotifyTime { get; set; }
+        public bool HasSound { get; set; }
+        public bool HasVibration { get; set; }
     }
 }

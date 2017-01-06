@@ -23,14 +23,18 @@ namespace Plugin.LocalNotifications
         /// <param name="title">Title of the notification</param>
         /// <param name="body">Body or description of the notification</param>
         /// <param name="id">Id of notifications</param>
-        public void Show(string title, string body, int id = 0)
+        public void Show(string title, string body, bool hasSound, bool hasVibration, int id)
         {
             var builder = new NotificationCompat.Builder(Application.Context);
             builder.SetContentTitle(title);
             builder.SetContentText(body);
             builder.SetAutoCancel(true);
-            builder.SetDefaults((int)(NotificationDefaults.Sound | NotificationDefaults.Vibrate));
-            builder.SetVibrate(new long[] { 100, 200, 300 });
+
+            if (hasSound)
+                builder.SetDefaults((int)NotificationDefaults.Sound);
+
+            if (hasVibration)
+                builder.SetVibrate(new long[] { 0, 1500 });
 
             if (NotificationIconId != 0)
             {
@@ -66,7 +70,7 @@ namespace Plugin.LocalNotifications
         /// <param name="body">Body or description of the notification</param>
         /// <param name="id">Id of the notification</param>
         /// <param name="notifyTime">The time you would like to schedule the notification for</param>
-        public void Show(string title, string body, int id, DateTime notifyTime)
+        public void Show(string title, string body, int id, DateTime notifyTime, bool hasSound, bool hasVibration)
         {
             var intent = CreateIntent(id);
 
@@ -75,6 +79,9 @@ namespace Plugin.LocalNotifications
             localNotification.Body = body;
             localNotification.Id = id;
             localNotification.NotifyTime = notifyTime;
+            localNotification.HasSound = hasSound;
+            localNotification.HasVibration = hasVibration;
+
             if (NotificationIconId != 0)
             {
                 localNotification.IconId = NotificationIconId;
