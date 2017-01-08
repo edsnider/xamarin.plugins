@@ -20,6 +20,8 @@ Usage:
     Notifier.Current.Cancel(1);
 
 ####Platform Specific Notes
+On Android, remember to add the android.permission.VIBRATE.
+
 On Windows and Windows Phone you must enable notifications in the app manifest by setting the "Toast capable" property to "Yes".
 
 On iOS (as of iOS 8) you must get permission from the user to allow the app to show local notifications.  Details on how to do this are here thanks to [Larry O'Brien](https://twitter.com/lobrien): [http://www.knowing.net/index.php/2014/07/03/local-notifications-in-ios-8-with-xamarin/](http://www.knowing.net/index.php/2014/07/03/local-notifications-in-ios-8-with-xamarin/)
