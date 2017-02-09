@@ -17,6 +17,20 @@ namespace Plugin.LocalNotifications
         /// Get or Set Resource Icon to display
         /// </summary>
         public static int NotificationIconId { get; set; }
+
+        /// <summary>
+        /// Gets or sets the optional local notification intent action.
+        /// </summary>
+        /// <value>The local notification intent action.</value>
+        public static string LocalNotificationIntentAction { get; set; }
+
+        internal const string LocalNotificationKey = "LocalNotification";
+
+        /// <summary>
+        /// The key of the bundle element that contains notification's id.
+        /// </summary>
+        public const string LocalNotificationIntentKey = "NotificationId";
+
         /// <summary>
         /// Show a local notification in the Notification Area and Drawer.
         /// </summary>
@@ -39,7 +53,13 @@ namespace Plugin.LocalNotifications
                 builder.SetSmallIcon(Resource.Drawable.plugin_lc_smallicon);
             }
 
-            var resultIntent = GetLauncherActivity();
+            var resultIntent = string.IsNullOrEmpty(LocalNotificationIntentAction) ?
+                                     GetLauncherActivity()
+                                     :
+                                     new Intent(LocalNotificationIntentAction).AddFlags(ActivityFlags.NewTask);
+
+            resultIntent.PutExtra(LocalNotificationIntentKey, id);
+
             var resultPendingIntent = PendingIntent.GetActivity(Application.Context, 0, resultIntent, PendingIntentFlags.UpdateCurrent);
             builder.SetContentIntent(resultPendingIntent);
 
@@ -80,7 +100,7 @@ namespace Plugin.LocalNotifications
             }
 
             var serializedNotification = SerializeNotification(localNotification);
-            intent.PutExtra(ScheduledAlarmHandler.LocalNotificationKey, serializedNotification);
+            intent.PutExtra(LocalNotificationKey, serializedNotification);
 
             var pendingIntent = PendingIntent.GetBroadcast(Application.Context, 0, intent, PendingIntentFlags.CancelCurrent);
             var triggerTime = NotifyTimeInMilliseconds(localNotification.NotifyTime);
@@ -121,6 +141,7 @@ namespace Plugin.LocalNotifications
             using (var stringWriter = new StringWriter())
             {
                 xmlSerializer.Serialize(stringWriter, notification);
+
                 return stringWriter.ToString();
             }
         }
