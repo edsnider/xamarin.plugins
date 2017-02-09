@@ -1,5 +1,7 @@
 # Local Notifications Plugin (Notifier)
 
+[Update] Due to changes in the core operating systems this NuGet and Plugin is no longer supported.
+
 Notifier provides a consistent and easy way to show local notifications from within a native mobile app with a single line of code. Notifications are handled and displayed natively for each respective platform OS so they will appear in the notification center on iOS, Android and Windows Phone and will display a toast on Windows and Windows Phone.
 
 **Platform Support**
