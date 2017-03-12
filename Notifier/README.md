@@ -2,4 +2,4 @@
 
 This plugin has moved to:
 
-[https://github.com/edsnider/LocalNotificationsPlugin]()
+[https://github.com/edsnider/LocalNotificationsPlugin](https://github.com/edsnider/LocalNotificationsPlugin)
