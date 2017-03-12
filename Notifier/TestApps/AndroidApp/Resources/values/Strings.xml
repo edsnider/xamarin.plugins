@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="ShowNotification">Show Notification</string>
-    <string name="IsAppInstalled">Is Calendar App Installed?</string>
-    <string name="ApplicationName">AndroidApp</string>
-</resources>
